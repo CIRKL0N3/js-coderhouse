@@ -25,8 +25,9 @@ console.log(nombre);
 //5
 //6
 //7
-const numeroUno = prompt("Ingrese un número");
-const numeroDos = prompt("Ingrese otro número");
+
+//const numeroUno = prompt("Ingrese un número");
+//const numeroDos = prompt("Ingrese otro número");
 
 console.log(typeof numeroUno, typeof numeroDos);
 //8
