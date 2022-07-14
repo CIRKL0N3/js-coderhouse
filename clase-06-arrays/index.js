@@ -1,0 +1,2 @@
+console.log("Clase06");
+
