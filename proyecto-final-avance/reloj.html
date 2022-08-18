@@ -6,22 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto con JavaScript</title>
     <!-- Estilos CSS -->
-    <link rel="stylesheet" type="text/css" href="proyecto-final-avance/css/styles.css">
-    <link id="theme" rel="stylesheet" type="text/css" href="proyecto-final-avance/css/green.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link id="about_theme" rel="stylesheet" type="text/css" href="css/green.css">
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
     <!-- Moment -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/es.min.js"></script>
-
+    
     <!-- Mis Scripts -->
-    <script type="text/javascript" src="proyecto-final-avance/js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
     <div id="selector-theme">
@@ -41,34 +37,29 @@
             <div class="clearfix"></div>
             <nav id="menu">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="proyecto-final-avance/reloj.html">Reloj</a></li>
-                    <li><a href="proyecto-final-avance/about.html">Sobre mi</a></li>
-                    <li><a href="proyecto-final-avance/contact.html">Contacto</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="reloj.html">Reloj</a></li>
+                    <li><a href="about.html">Sobre mi</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Slider -->
-        <div id="slider">
-            <div class="galeria">
-                <div><img src="proyecto-final-avance/recursos/hojas.jpg" title="Green leafs"></div>
-                <div><img src="proyecto-final-avance/recursos/rojo.jpg" title="Red leafs"></div>
-                <div><img src="proyecto-final-avance/recursos/cielo.jpg" title="Sky"></div>
-            </div>
-        </div>
-
         <!-- Contenido -->
         <section id="content">
+            
+            <div id="box">
+                <!-- Cargar reloj -->
+                <div id="reloj">
 
-            <div id="posts">
-            <!-- Cargar posts desde json -->
+                </div>
+                
             </div>
 
             <aside id="sidebar">
                 <div id="about">
                     <h4><span>¿Quién soy?</span></h4>
-                    <img src="proyecto-final-avance/recursos/caracol.jpg">
+                    <img src="recursos/caracol.jpg">
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus quas blanditiis doloribus repellat magni.
                     </p>
@@ -103,7 +94,7 @@
     </section>
 
     <footer id="footer">
-        Master de JavaScript - Edgar Hernandez &copy;
+        Master de JavaScript con Victor Robles &copy;
 
         <a href="#" class="subir">Ir arriba</a>
     </footer>
