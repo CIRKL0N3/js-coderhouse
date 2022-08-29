@@ -152,85 +152,36 @@ $(document).ready(function() {
         });
     }
 
-    // Fetch (Página about)
-    let div_usuarios = document.querySelector("#usuarios");
-    let div_profesor = document.querySelector("#profesor");
-    let div_janet = document.querySelector("#janet");
+    // Fetch (Página Sobre mi)
+    const input = document.querySelector("input");
+    const button = document.querySelector("button");
+    const pokemonContainer = document.querySelector(".pokemon-container");
 
-        getUsuarios()
-            .then(data => data.json())
-            .then(users => {
-                listadoUsuarios(users.data);
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        traerPokemon(input.value);
+    })
 
-                return getInfo();
-            })
-            .then(data => {
-                div_profesor.innerHTML = data;
-
-                return getJanet();
-            })
-            .then(data => data.json())
-            .then(user => {
-                mostrarJanet(user.data);
-            });
-            
-
-    function getUsuarios() {
-        return fetch('https://reqres.in/api/users');
-    }
-
-    function getJanet() {
-        return fetch('https://reqres.in/api/users/2');
-    }
-
-    function getInfo() {
-        let profesor = {
-            nombre: 'Víctor',
-            apellidos: 'Robles',
-            url: 'https://victorroblesweb.es'
-        };
-
-        return new Promise((resolve, reject) => {
-            let profesor_string = "";
-
-            setTimeout(function() {
-                profesor_string = JSON.stringify(profesor);
-
-                if(typeof profesor_string != 'string' || profesor_string == '') return reject('error');
-
-                return resolve(profesor_string);
-
-            }, 3000);
-
+    function traerPokemon(pokemon) {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+        .then((res) => res.json())
+        .then((data) => {
+            crearPokemon(data);
         });
     }
 
-    function listadoUsuarios(usuarios) {
-        usuarios.map((user, i) => {
-            let nombre = document.createElement('h3');
+    function crearPokemon(pokemon) {
+        const img = document.createElement('img');
+        img.src = pokemon.sprites.front_default;
 
-            nombre.innerHTML = i + '. ' + user.first_name + " " + user.last_name;
+        const h3 = document.createElement('h3');
+        h3.textContent = pokemon.name;
 
-            div_usuarios.appendChild(nombre);
+        const div = document.createElement('div');
+        div.appendChild(img);
+        div.appendChild(h3);
 
-            document.querySelector(".loading").style.display = 'none';
-        });
-    }
-
-    function mostrarJanet(user) {
-        console.log();
-        let nombre = document.createElement('h4');
-        let avatar = document.createElement('img');
-
-        nombre.innerHTML = user.first_name + " " + user.last_name;
-        avatar.src = user.avatar;
-        avatar.width = '100';
-
-        div_janet.appendChild(nombre);
-        div_janet.appendChild(avatar);
-
-        document.querySelector("#janet .loading").style.display = 'none';
-        
+        pokemonContainer.appendChild(div);
     }
 
 });
